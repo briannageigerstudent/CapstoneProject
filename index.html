@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Study Buddy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    
+    <h1>AI Study Buddy</h1>
+
+    <textarea id="inputText" placeholder="Paste study material here..."></textarea>
+
+    <div class="buttons">
+      <button onclick="handleAction('summarize')">Summarize</button>
+      <button onclick="handleAction('quiz')">Generate Quiz</button>
+      <button onclick="handleAction('flashcards')">Flashcards</button>
+        <button onclick="handleAction('recommend resources')">Recommend Resources</button>
+    </div>
+
+    <div id="output"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
