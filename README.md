@@ -3,3 +3,4 @@ User inputs study material or topic and can choose a summary, quiz, flashcards, 
 
 HTML, CSS, and JS and Fetch API used. Live deployed through GitHub Pages.
 
+https://briannageigerstudent.github.io/CapstoneProject/
