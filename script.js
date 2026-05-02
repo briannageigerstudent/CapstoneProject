@@ -1,4 +1,4 @@
-const API_KEY = "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"; // open ai key
+const API_KEY = "AIzaSyCT-ChvFtWuPQAyA-NkihWv-qK1ACtUHqA"
 
 async function handleAction(type) {
   const input = document.getElementById("inputText").value;
@@ -24,22 +24,25 @@ async function handleAction(type) {
   }
 
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${API_KEY}`
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        messages: [
-          { role: "user", content: prompt }
-        ]
-      })
-    });
+    const response = await fetch(
+  `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`,
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      contents: [
+        {
+          parts: [{ text: prompt }]
+        }
+      ]
+    })
+  }
+);
 
     const data = await response.json();
-    outputDiv.innerText = data.choices[0].message.content;
+    outputDiv.innerText = data.candidates[0].content.parts[0].text
 
   } catch (error) {
     outputDiv.innerText = "Error: " + error.message;
